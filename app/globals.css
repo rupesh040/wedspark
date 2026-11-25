@@ -2,25 +2,112 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #490146;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins), sans-serif;
+  --font-serif: var(--font-playfair), serif;
+  --font-script: var(--font-script), cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+@keyframes wsTopBarEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wsFadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wsFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes wsFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wsHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ws-topbar-enter {
+  animation: wsTopBarEnter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ws-logo-enter {
+  animation: wsFadeRight 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+}
+
+.ws-nav-enter {
+  animation: wsFadeDown 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.ws-cta-enter {
+  animation: wsFadeLeft 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.ws-hero-content-enter {
+  animation: wsHeroFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .ws-topbar-enter,
+  .ws-logo-enter,
+  .ws-nav-enter,
+  .ws-cta-enter,
+  .ws-hero-content-enter {
+    animation: none;
+  }
 }

@@ -1,0 +1,728 @@
+{
+  "WedSpark": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Header": "WedSparkHeader1",
+          "Footer": "WedSparkFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Header",
+                "component": "WedSparkHeader1"
+              },
+              {
+                "key": "Hero",
+                "component": "WedSparkHero1"
+              },
+              {
+                "key": "Stats",
+                "component": "WedSparkStats1"
+              },
+              {
+                "key": "About",
+                "component": "WedSparkAbout1"
+              },
+              {
+                "key": "Service",
+                "component": "WedSparkService1"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "WedSparkWhyChooseUs1"
+              },
+              {
+                "key": "Gallery",
+                "component": "WedSparkGallery1"
+              },
+              {
+                "key": "Testimonial",
+                "component": "WedSparkTestimonial1"
+              },
+              {
+                "key": "Faqs",
+                "component": "WedSparkFaqs1"
+              },
+              {
+                "key": "Contact",
+                "component": "WedSparkContact1"
+              },
+              {
+                "key": "Footer",
+                "component": "WedSparkFooter1"
+              }
+            ]
+          },
+          "about-us": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "WedSparkPageBanner1"
+              },
+              {
+                "key": "About",
+                "component": "WedSparkAbout1"
+              }
+            ]
+          },
+          "service": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "WedSparkPageBanner1"
+              },
+              {
+                "key": "ServicesListing",
+                "component": "WedSparkService1"
+              }
+            ]
+          },
+          "why-choose-us": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "WedSparkPageBanner1"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "WedSparkWhyChooseUs1"
+              }
+            ]
+          },
+          "gallery": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "WedSparkPageBanner1"
+              },
+              {
+                "key": "Gallery",
+                "component": "WedSparkGallery1"
+              }
+            ]
+          },
+          "testimonial": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "WedSparkPageBanner1"
+              },
+              {
+                "key": "Testimonial",
+                "component": "WedSparkTestimonial1"
+              }
+            ]
+          },
+          "faqs": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "WedSparkPageBanner1"
+              },
+              {
+                "key": "Faqs",
+                "component": "WedSparkFaqs1"
+              }
+            ]
+          },
+          "contact": {
+            "components": [
+              {
+                "key": "PageBanner",
+                "component": "WedSparkPageBanner1"
+              },
+              {
+                "key": "ContactDetails",
+                "component": "WedSparkContact1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Header": {
+        "variants": {
+          "WedSparkHeader1": {
+            "topBar": {
+              "address": "Jordan Taylor, 742 Evergreen Terrace, Apt 4B, Austin, TX 78701, USA",
+              "addressHref": "https://maps.google.com/?q=K-62,+Second+Floor,+Lajpat+Nagar,+New+Delhi+-+110024",
+              "email": "info@xyz.com",
+              "emailHref": "mailto:info@xyz.com",
+              "followLabel": "Follow Us:",
+              "socialLinks": [
+                {
+                  "name": "Facebook",
+                  "icon": "facebook",
+                  "href": "https://facebook.com"
+                },
+                {
+                  "name": "Twitter",
+                  "icon": "twitter",
+                  "href": "https://twitter.com"
+                },
+                {
+                  "name": "Instagram",
+                  "icon": "instagram",
+                  "href": "https://instagram.com"
+                },
+                {
+                  "name": "LinkedIn",
+                  "icon": "linkedin",
+                  "href": "https://linkedin.com"
+                }
+              ]
+            },
+            "logo": "/logo.webp",
+            "logoAlt": "WedSpark Weddings & Events Logo",
+            "links": [
+              {
+                "name": "HOME",
+                "href": "/",
+                "active": true
+              },
+              {
+                "name": "ABOUT US",
+                "href": "#about",
+                "active": false
+              },
+              {
+                "name": "SERVICE",
+                "href": "#service",
+                "active": false
+              },
+              {
+                "name": "WHY CHOOSE US",
+                "href": "#why-choose-us",
+                "active": false
+              },
+              {
+                "name": "GALLERY",
+                "href": "#gallery",
+                "active": false
+              },
+              {
+                "name": "TESTIMONIAL",
+                "href": "#testimonial",
+                "active": false
+              },
+              {
+                "name": "FAQS",
+                "href": "#faqs",
+                "active": false
+              }
+            ],
+            "button": "CONTACT US",
+            "buttonHref": "#contact"
+          }
+        }
+      },
+      "Hero": {
+        "variants": {
+          "WedSparkHero1": {
+            "sliderSettings": {
+              "autoplay": true,
+              "autoplayInterval": 5000
+            },
+            "ariaLabels": {
+              "prevSlide": "Previous Slide",
+              "nextSlide": "Next Slide",
+              "goToSlide": "Go to slide"
+            },
+            "slides": [
+              {
+                "id": "1",
+                "subtitle": "WE ARE SKILLED & EXPERT",
+                "headingLine1": "Wedding & Event Planner",
+                "headingPrefix": "For ",
+                "headingHighlight": "Colorful",
+                "headingSuffix": " Couples",
+                "description": "We create unforgettable weddings and events with creative planning, elegant décor, and seamless execution tailored to your story.",
+                "image": "/hero.webp",
+                "imageAlt": "Wedding & Event Planner For Colorful Couples"
+              },
+              {
+                "id": "2",
+                "subtitle": "MOMENTS CRAFTED TO PERFECTION",
+                "headingLine1": "Exclusive Celebration Design",
+                "headingPrefix": "With ",
+                "headingHighlight": "Magical",
+                "headingSuffix": " Elegance",
+                "description": "Delivering bespoke wedding themes, enchanting lighting atmospheres, and flawless coordination for your grand day.",
+                "image": "/service.webp",
+                "imageAlt": "Exclusive Celebration Design With Magical Elegance"
+              },
+              {
+                "id": "3",
+                "subtitle": "YOUR DREAM DESTINATION WEDDING",
+                "headingLine1": "Bespoke Royal Ceremonies",
+                "headingPrefix": "For ",
+                "headingHighlight": "Timeless",
+                "headingSuffix": " Memories",
+                "description": "From intimate vows to spectacular receptions, our dedicated wedding specialists bring every nuance of your vision to life.",
+                "image": "/testimonials.webp",
+                "imageAlt": "Bespoke Royal Ceremonies For Timeless Memories"
+              }
+            ]
+          }
+        }
+      },
+      "Stats": {
+        "variants": {
+          "WedSparkStats1": {
+            "items": [
+              {
+                "id": "weddings-planned",
+                "value": "1,200+",
+                "label": "Weddings Planned",
+                "icon": "rings-heart"
+              },
+              {
+                "id": "corporate-events",
+                "value": "500+",
+                "label": "Corporate Events",
+                "icon": "users"
+              },
+              {
+                "id": "destination-events",
+                "value": "150+",
+                "label": "Destination Events",
+                "icon": "map-pin"
+              },
+              {
+                "id": "client-satisfaction",
+                "value": "98%",
+                "label": "Client Satisfaction",
+                "icon": "thumbs-up"
+              },
+              {
+                "id": "years-of-experience",
+                "value": "10+",
+                "label": "Years of Experience",
+                "icon": "calendar"
+              }
+            ]
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "WedSparkAbout1": {
+            "tagline": "ABOUT US",
+            "heading": "Telling Your Story Through Our Lens",
+            "headingPart1": "Telling Your Story",
+            "headingPart2": "Through Our Lens",
+            "description": "At WedSpark, we turn your special moments into lasting memories. From intimate weddings to grand celebrations, we plan, design, and manage every detail with creativity, passion, and perfection.",
+            "images": [
+              {
+                "src": "/about-1.webp",
+                "alt": "Bride in wedding gown with groom embracing",
+                "caption": "Intimate Celebrations"
+              },
+              {
+                "src": "/about-2.webp",
+                "alt": "Traditional wedding couple embracing with floral backdrop",
+                "caption": "Grand Celebrations"
+              },
+              {
+                "src": "/about-3.webp",
+                "alt": "Bride twirling in elegant white gown in garden",
+                "caption": "Magical Moments"
+              }
+            ]
+          }
+        }
+      },
+      "Service": {
+        "variants": {
+          "WedSparkService1": {
+            "tagline": "OUR SERVICES",
+            "headingPart1": "Our",
+            "headingHighlight": "Wedding & Event",
+            "headingPart2": "Services",
+            "description": "From intimate ceremonies to grand celebrations, we offer end-to-end planning and execution to make your special moments truly unforgettable.",
+            "defaultActiveId": "event-decoration",
+            "ariaLabels": {
+              "prevService": "Previous service",
+              "nextService": "Next service",
+              "selectService": "Select service"
+            },
+            "items": [
+              {
+                "id": "wedding-planning",
+                "title": "Wedding Planning",
+                "icon": "rings",
+                "image": "/hero.webp",
+                "imageAlt": "Wedding planning and bridal stage design",
+                "description": "Comprehensive planning from concept to execution for your dream wedding."
+              },
+              {
+                "id": "pre-wedding-events",
+                "title": "Pre-Wedding Events",
+                "icon": "cake",
+                "image": "/gallery-2.webp",
+                "imageAlt": "Pre-wedding celebration and haldi mehendi setup",
+                "description": "Vibrant and joyful celebrations including Mehendi, Sangeet, and Haldi ceremonies."
+              },
+              {
+                "id": "event-decoration",
+                "title": "Event Decoration",
+                "icon": "lotus",
+                "image": "/service.webp",
+                "imageAlt": "Grand wedding stage and floral event decoration",
+                "description": "Bespoke floral installations, stage draping, and thematic venue transformations."
+              },
+              {
+                "id": "corporate-events",
+                "title": "Corporate Events",
+                "icon": "champagne",
+                "image": "/gallery-4.webp",
+                "imageAlt": "Sophisticated gala and corporate event setup",
+                "description": "Impeccably organized corporate galas, product launches, and luxury dinners."
+              },
+              {
+                "id": "birthday-special-events",
+                "title": "Birthday & Special Events",
+                "icon": "calendar",
+                "image": "/gallery-5.webp",
+                "imageAlt": "Milestone birthday party and anniversary celebration",
+                "description": "Cherished milestone celebrations curated with custom themes and entertainment."
+              },
+              {
+                "id": "venue-management",
+                "title": "Venue Management",
+                "icon": "tent",
+                "image": "/testimonial.webp",
+                "imageAlt": "Luxury wedding venue and outdoor marquee",
+                "description": "End-to-end venue selection, marquee coordination, and on-site vendor logistics."
+              }
+            ]
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "WedSparkWhyChooseUs1": {
+            "tagline": "Why Choose Us",
+            "heading": "Crafting Unforgettable Weddings & Events",
+            "headingPart1": "Crafting Unforgettable",
+            "headingPart2": "Weddings & Events",
+            "description": "We combine creativity, meticulous planning, and flawless execution to bring your vision to life. With a passion for details and a commitment to excellence, we create celebrations that are truly memorable.",
+            "image": "/whychooseus.webp",
+            "imageAlt": "Luxury golden wedding chair with pastel rose bouquet and purple ribbon"
+          }
+        }
+      },
+      "Gallery": {
+        "variants": {
+          "WedSparkGallery1": {
+            "tagline": "OUR GALLERY",
+            "headingPart1": "Moments Captured ",
+            "headingHighlight": "Through Our Lens",
+            "description": "Explore our gallery of cherished weddings, luxury decor, grand celebrations, and unforgettable memories tailored to perfection.",
+            "items": [
+              {
+                "id": "gallery-1",
+                "title": "Teamwork & Planning",
+                "category": "Event Coordination",
+                "image": "/gallery-1.webp",
+                "imageAlt": "Dedicated wedding planning team joining hands in unity"
+              },
+              {
+                "id": "gallery-2",
+                "title": "Destination Ceremony",
+                "category": "Outdoor Weddings",
+                "image": "/gallery-2.webp",
+                "imageAlt": "Scenic mountain wedding venue with pink carpet and floral gazebo"
+              },
+              {
+                "id": "gallery-3",
+                "title": "Banquet Dining Setup",
+                "category": "Reception Decor",
+                "image": "/gallery-3.webp",
+                "imageAlt": "Elegant round banquet tables with pink rose floral centerpieces"
+              },
+              {
+                "id": "gallery-4",
+                "title": "Royal Wedding Stage",
+                "category": "Stage Decoration",
+                "image": "/gallery-4.webp",
+                "imageAlt": "Traditional royal wedding stage with pink draping and golden couch"
+              },
+              {
+                "id": "gallery-5",
+                "title": "Champagne Celebration",
+                "category": "Joyful Moments",
+                "image": "/gallery-5.webp",
+                "imageAlt": "Happy couple popping champagne with sparkling spray"
+              },
+              {
+                "id": "gallery-6",
+                "title": "Wedding Car Procession",
+                "category": "Bridal Conveyance",
+                "image": "/gallery-6.webp",
+                "imageAlt": "Luxury black wedding cars decorated with pink ribbons and balloons"
+              },
+              {
+                "id": "gallery-7",
+                "title": "Gourmet Catering Buffet",
+                "category": "Culinary Experience",
+                "image": "/contactus-1.webp",
+                "imageAlt": "Exquisite wedding buffet station with silver chafing dishes and desserts"
+              },
+              {
+                "id": "gallery-8",
+                "title": "Welcome & Reception Desk",
+                "category": "Hospitality Management",
+                "image": "/gallery-7.webp",
+                "imageAlt": "Personalized wooden wedding welcome desk with floral garland arch"
+              }
+            ]
+          }
+        }
+      },
+      "Testimonial": {
+        "variants": {
+          "WedSparkTestimonial1": {
+            "tagline": "TESTIMONIALS",
+            "headingPart1": "What Our ",
+            "headingHighlight": "Clients Say",
+            "headingPart2": " About Us",
+            "description": "Real stories from our happy clients who trusted us with their special moments.",
+            "ariaLabels": {
+              "prevTestimonial": "Previous testimonial",
+              "nextTestimonial": "Next testimonial",
+              "goToTestimonial": "Go to testimonial"
+            },
+            "sliderSettings": {
+              "autoplay": true,
+              "autoplayInterval": 6000
+            },
+            "items": [
+              {
+                "id": "1",
+                "names": "Martin & Williamson",
+                "event": "Wedding : 23.05.2022",
+                "image": "/testimonial.webp",
+                "imageAlt": "Martin and Williamson wedding celebration with Eiffel Tower in Paris",
+                "quote": "From the initial planning to the final execution, everything was absolutely perfect. The team was professional, creative, and attentive to every detail. They made our wedding day truly special and stress-free."
+              },
+              {
+                "id": "2",
+                "names": "Aarav & Meera",
+                "event": "Wedding : 14.11.2023",
+                "image": "/about-2.webp",
+                "imageAlt": "Aarav and Meera destination royal wedding ceremony",
+                "quote": "WedSpark transformed our destination wedding into an ethereal royal celebration. Every guest was blown away by the floral artistry and seamless coordination. It exceeded our highest dreams!"
+              },
+              {
+                "id": "3",
+                "names": "David & Sophia",
+                "event": "Wedding : 18.08.2024",
+                "image": "/about-1.webp",
+                "imageAlt": "David and Sophia elegant garden wedding",
+                "quote": "From our initial meeting to the midnight send-off, WedSpark's attention to detail was exceptional. They handled every nuance with grace, allowing us to truly live in the moment."
+              }
+            ]
+          }
+        }
+      },
+      "Faqs": {
+        "variants": {
+          "WedSparkFaqs1": {
+            "tagline": "FAQ",
+            "headingPart1": "Your Questions, ",
+            "headingHighlight": "Answered",
+            "defaultOpenId": "1",
+            "ariaLabels": {
+              "toggleQuestion": "Toggle question"
+            },
+            "items": [
+              {
+                "id": "1",
+                "number": "1.",
+                "question": "How many photos will we receive?",
+                "answer": "On average, you'll receive between 400 and 800 edited images, depending on the length and coverage of your day."
+              },
+              {
+                "id": "2",
+                "number": "2.",
+                "question": "Do you offer engagement sessions?",
+                "answer": "Yes, we offer complimentary or standalone engagement sessions to help you get comfortable in front of the camera before your big day."
+              },
+              {
+                "id": "3",
+                "number": "3.",
+                "question": "Will all the photos be edited?",
+                "answer": "Every single delivered photograph is individually color-corrected, cropped, and enhanced to match our signature warm and vibrant luxury aesthetic."
+              },
+              {
+                "id": "4",
+                "number": "4.",
+                "question": "Do you travel for destination weddings?",
+                "answer": "Absolutely! We regularly travel across the country and worldwide for destination weddings and celebrations, handling all travel logistics seamlessly."
+              },
+              {
+                "id": "5",
+                "number": "5.",
+                "question": "What happens if it rains on our wedding day?",
+                "answer": "We always have comprehensive contingency plans, indoor backup lighting, and creative rainy-day setups to capture stunning, romantic moments rain or shine."
+              }
+            ]
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "WedSparkContact1": {
+            "tagline": "Get In Touch",
+            "headingPart1": "We’d Love to",
+            "headingHighlight": "Hear From You",
+            "descriptionLine1": "Have a question, need a quote, or want to plan your special event?",
+            "descriptionLine2": "Fill out the form and our team will get back to you soon.",
+            "images": {
+              "top": {
+                "src": "/contactus.webp",
+                "alt": "Happy bride and groom embracing in lush greenhouse setting"
+              },
+              "bottom": {
+                "src": "/contactus-1.webp",
+                "alt": "Radiant bride holding vibrant pastel bouquet in outdoor meadow"
+              }
+            },
+            "form": {
+              "fields": [
+                {
+                  "name": "name",
+                  "placeholder": "Your Name",
+                  "type": "text",
+                  "icon": "user",
+                  "required": true
+                },
+                {
+                  "name": "email",
+                  "placeholder": "Your Email",
+                  "type": "email",
+                  "icon": "email",
+                  "required": true
+                },
+                {
+                  "name": "phone",
+                  "placeholder": "Phone Number",
+                  "type": "tel",
+                  "icon": "phone",
+                  "required": false
+                },
+                {
+                  "name": "date",
+                  "placeholder": "Event Date",
+                  "type": "text",
+                  "icon": "calendar",
+                  "required": false
+                },
+                {
+                  "name": "location",
+                  "placeholder": "Your Location",
+                  "type": "text",
+                  "icon": "location",
+                  "required": false
+                },
+                {
+                  "name": "guests",
+                  "placeholder": "Number of Guests",
+                  "type": "text",
+                  "icon": "guests",
+                  "required": false
+                }
+              ],
+              "messageField": {
+                "name": "message",
+                "placeholder": "Your Message",
+                "icon": "message",
+                "required": true
+              },
+              "submitButtonText": "Send a Message",
+              "successMessage": "Thank you! Your message has been sent successfully. We will get back to you shortly."
+            }
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "WedSparkFooter1": {
+            "logo": "/logo.webp",
+            "logoAlt": "WedSpark Weddings & Events Logo",
+            "links": [
+              {
+                "name": "HOME",
+                "href": "/"
+              },
+              {
+                "name": "ABOUT US",
+                "href": "#about"
+              },
+              {
+                "name": "SERVICE",
+                "href": "#service"
+              },
+              {
+                "name": "WHY CHOOSE US",
+                "href": "#why-choose-us"
+              },
+              {
+                "name": "GALLERY",
+                "href": "#gallery"
+              },
+              {
+                "name": "TESTIMONIAL",
+                "href": "#testimonial"
+              },
+              {
+                "name": "FAQS",
+                "href": "#faqs"
+              },
+              {
+                "name": "CONTACT US",
+                "href": "#contact"
+              }
+            ],
+            "socialLinks": [
+              {
+                "platform": "whatsapp",
+                "href": "https://wa.me/1000000000",
+                "label": "WhatsApp"
+              },
+              {
+                "platform": "instagram",
+                "href": "https://instagram.com",
+                "label": "Instagram"
+              },
+              {
+                "platform": "facebook",
+                "href": "https://facebook.com",
+                "label": "Facebook"
+              },
+              {
+                "platform": "linkedin",
+                "href": "https://linkedin.com/company",
+                "label": "LinkedIn"
+              },
+              {
+                "platform": "pinterest",
+                "href": "https://pinterest.com",
+                "label": "Pinterest"
+              }
+            ],
+            "copyright": {
+              "textPrefix": "© Copyright 2026 | ",
+              "brandName": "WedSpark Weddings & Events",
+              "textSuffix": " | All Rights Reserved. Powered by Lestow"
+            }
+          }
+        }
+      }
+    }
+  }
+}
