@@ -276,7 +276,7 @@ export function Hero({ data }: HeroProps) {
           }
         }
       }}
-      className="relative min-h-[540px] w-full overflow-hidden bg-[#290526] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[740px]"
+      className="relative h-[700px] min-h-[700px] max-h-[700px] w-full shrink-0 grow-0 overflow-hidden bg-[#290526]"
     >
       <div className="pointer-events-none absolute inset-0 select-none">
         {data.slides.map((slide, index) => {
@@ -317,11 +317,25 @@ export function Hero({ data }: HeroProps) {
         className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-black/50 via-transparent to-black/20"
       />
 
+      <div className="pointer-events-none absolute inset-0 z-30">
+        <div className="mx-auto flex h-full max-w-[1280px] items-center px-4 py-10 sm:px-6 sm:py-14 lg:pl-24 lg:pr-8 lg:py-18 min-[1440px]:pl-8">
+          <div className="grid w-full grid-cols-[minmax(0,1fr)]">
+            {data.slides.map((slide, index) => (
+              <SlideContent
+                key={slide.id}
+                slide={slide}
+                active={ready && index === currentSlideIndex}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       <button
         type="button"
         onClick={handlePrev}
         aria-label={data.ariaLabels.prevSlide}
-        className="group absolute left-6 top-1/2 z-30 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#5C246E] shadow-xl shadow-black/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D89A33] active:scale-95 lg:flex"
+        className="group absolute left-6 top-1/2 z-40 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#5C246E] shadow-xl shadow-black/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D89A33] active:scale-95 lg:flex"
       >
         <ArrowIcon direction="prev" />
       </button>
@@ -330,24 +344,12 @@ export function Hero({ data }: HeroProps) {
         type="button"
         onClick={handleNext}
         aria-label={data.ariaLabels.nextSlide}
-        className="group absolute right-6 top-1/2 z-30 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#5C246E] shadow-xl shadow-black/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D89A33] active:scale-95 lg:flex"
+        className="group absolute right-6 top-1/2 z-40 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#5C246E] shadow-xl shadow-black/30 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D89A33] active:scale-95 lg:flex"
       >
         <ArrowIcon direction="next" />
       </button>
 
-      <div className="relative z-30 mx-auto flex min-h-[500px] max-w-[1280px] items-center px-4 py-10 sm:min-h-[600px] sm:px-6 sm:py-14 md:min-h-[640px] lg:min-h-[700px] lg:pl-24 lg:pr-8 lg:py-18 min-[1440px]:pl-8 xl:min-h-[740px]">
-        <div className="grid w-full grid-cols-[minmax(0,1fr)]">
-          {data.slides.map((slide, index) => (
-            <SlideContent
-              key={slide.id}
-              slide={slide}
-              active={ready && index === currentSlideIndex}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 sm:bottom-5 sm:gap-4 lg:gap-0">
+      <div className="absolute bottom-4 left-1/2 z-40 flex -translate-x-1/2 items-center gap-3 sm:bottom-5 sm:gap-4 lg:gap-0">
         <button
           type="button"
           onClick={handlePrev}
