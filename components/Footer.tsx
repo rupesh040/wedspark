@@ -105,7 +105,7 @@ export default function Footer({ data }: FooterProps) {
   return (
     <footer
       ref={ref}
-      className="relative bg-[#FFF9FB] py-18 px-4 sm:px-6 lg:px-8 border-t border-[#F2DEEB] overflow-hidden"
+      className="relative bg-[#FFF9FB] pt-7 pb-8 sm:pt-14 sm:pb-14 lg:pt-18 lg:pb-16 px-4 sm:px-6 lg:px-8 border-t border-[#F2DEEB] overflow-hidden"
     >
       <style>{`
         @keyframes ft-beat {
@@ -157,16 +157,16 @@ export default function Footer({ data }: FooterProps) {
               width={400}
               height={160}
               priority
-              className="h-24 sm:h-28 md:h-32 lg:h-36 w-auto object-contain mx-auto ft-motion"
+              className="h-20 sm:h-28 md:h-32 lg:h-36 w-auto object-contain mx-auto ft-motion"
               style={{ animation: "ft-drift 7s ease-in-out 1.6s infinite" }}
             />
           </Link>
         </div>
 
-        <nav aria-label="Footer Navigation" className="mt-8 mb-7">
-          <ul className="flex flex-wrap items-center justify-center gap-x-3.5 sm:gap-x-5 gap-y-2.5 text-xs sm:text-sm font-bold tracking-wider text-[#1F1A1C]">
+        <nav aria-label="Footer Navigation" className="mt-5 mb-5 sm:mt-8 sm:mb-7">
+          <ul className="grid grid-cols-2 grid-rows-4 grid-flow-col gap-x-6 gap-y-2.5 max-w-[280px] xs:max-w-[320px] mx-auto text-center sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-3.5 md:gap-x-5 sm:gap-y-2.5 sm:max-w-none text-xs sm:text-sm font-bold tracking-wider text-[#1F1A1C]">
             {data.links.map((link, index) => (
-              <li key={link.name} className="flex items-center gap-x-3.5 sm:gap-x-5">
+              <li key={link.name} className="flex items-center justify-center sm:gap-x-3.5 md:gap-x-5">
                 <span
                   className={`inline-block transition-all duration-[900ms] ${
                     inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -192,7 +192,8 @@ export default function Footer({ data }: FooterProps) {
                         const targetId = link.href.replace("#", "");
                         const target = document.getElementById(targetId);
                         if (target) {
-                          const headerOffset = 90;
+                          const isMobile = window.innerWidth < 1024;
+                          const headerOffset = isMobile ? 70 : 90;
                           const pos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
                           window.scrollTo({ top: Math.max(0, pos), behavior: "smooth" });
                           try {
@@ -209,7 +210,7 @@ export default function Footer({ data }: FooterProps) {
                 </span>
                 {index < navCount - 1 && (
                   <span
-                    className={`text-[#CB995A] text-xs select-none ${pop(520 + index * 80).className}`}
+                    className={`hidden sm:inline text-[#CB995A] text-xs select-none ${pop(520 + index * 80).className}`}
                     style={pop(520 + index * 80).style}
                   >
                     •
@@ -220,7 +221,7 @@ export default function Footer({ data }: FooterProps) {
           </ul>
         </nav>
 
-        <div className="flex items-center justify-center gap-3.5 sm:gap-4 my-6">
+        <div className="flex items-center justify-center gap-3.5 sm:gap-4 my-4 sm:my-6">
           {data.socialLinks.map((item, index) => (
             <span
               key={item.platform}
@@ -244,7 +245,7 @@ export default function Footer({ data }: FooterProps) {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-4 max-w-lg mx-auto my-7">
+        <div className="flex items-center justify-center gap-4 max-w-lg mx-auto my-5 sm:my-7">
           <span
             className="h-[1px] flex-1 bg-[#CB995A]/60 origin-right transition-transform duration-[1400ms]"
             style={{

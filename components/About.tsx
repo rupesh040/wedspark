@@ -107,7 +107,7 @@ export function About({ data }: AboutProps) {
     <section
       ref={ref}
       id="about"
-      className="overflow-hidden bg-white py-16 "
+      className="overflow-hidden bg-white py-10 sm:py-14 lg:py-16 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10 xl:gap-14">
@@ -216,15 +216,15 @@ export function About({ data }: AboutProps) {
             <div className="relative mx-auto flex w-full max-w-[620px] items-center lg:max-w-none">
               <div
                 aria-hidden="true"
-                style={delay(0)}
-                className={`absolute left-[13%] top-[9%] z-0 h-[81%] w-[36%] origin-top border border-[#84137C]/70 bg-[#F1E7F3] transition-transform duration-[1500ms] ${ease} motion-reduce:transition-none ${
+                style={delay(100)}
+                className={`absolute left-[10%] top-[10%] bottom-[10%] z-0 w-[24%] origin-top bg-[#F1E7F3] transition-transform duration-[1500ms] ${ease} motion-reduce:transition-none ${
                   inView ? "scale-y-100" : "scale-y-0"
                 }`}
               />
               <div
                 aria-hidden="true"
-                style={delay(200)}
-                className={`absolute bottom-0 right-[11%] top-[15%] z-0 w-[18%] origin-bottom bg-[#EFE3F2] transition-transform duration-[1500ms] ${ease} motion-reduce:transition-none ${
+                style={delay(100)}
+                className={`absolute right-[10%] top-[10%] bottom-[10%] z-0 w-[24%] origin-top bg-[#F1E7F3] transition-transform duration-[1500ms] ${ease} motion-reduce:transition-none ${
                   inView ? "scale-y-100" : "scale-y-0"
                 }`}
               />

@@ -182,7 +182,7 @@ export function Services({ data }: ServicesProps) {
     <section
       ref={ref}
       id="service"
-      className="overflow-hidden bg-white py-16 "
+      className="overflow-hidden bg-white py-10 sm:py-14 lg:py-16 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">

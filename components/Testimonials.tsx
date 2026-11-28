@@ -171,7 +171,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
     <section
       ref={sectionRef}
       id="testimonial"
-      className="relative overflow-hidden bg-[#FDF7FB] py-16"
+      className="relative overflow-hidden bg-[#FDF7FB] py-10 sm:py-14 lg:py-16 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
     >
       <div
         aria-hidden="true"
@@ -327,7 +327,7 @@ export default function Testimonials({ data }: TestimonialsProps) {
               </div>
 
               <div
-                className={`relative z-20 -mt-8 mx-4 rounded-[22px] bg-[linear-gradient(to_bottom_left,#BA0D84_0%,rgba(186,13,132,0.1)_14%,rgba(186,13,132,0.1)_86%,#BA0D84_100%)] p-[2px] shadow-[0_24px_55px_rgba(73,1,70,0.12)] transition-[opacity,transform,translate] delay-500 duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none sm:mx-8 sm:rounded-[26px] lg:mt-0 lg:mr-0 lg:-ml-20 lg:flex-1 ${
+                className={`relative z-20 -mt-8 mx-4 rounded-[22px] bg-[linear-gradient(135deg,transparent_35%,rgba(186,13,132,0.25)_65%,#BA0D84_100%)] p-[2px] shadow-[0_24px_55px_rgba(73,1,70,0.12)] transition-[opacity,transform,translate] delay-500 duration-[1100ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none sm:mx-8 sm:rounded-[26px] lg:mt-0 lg:mr-0 lg:-ml-20 lg:flex-1 ${
                   inView ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
                 }`}
               >
@@ -339,14 +339,16 @@ export default function Testimonials({ data }: TestimonialsProps) {
                         inView ? "scale-x-100" : "scale-x-0"
                       }`}
                     />
-                    <span
+                    <svg
                       aria-hidden="true"
-                      className={`${serif.className} block h-8 select-none text-[56px] leading-[1.1] text-[#A30B72] transition-[opacity,transform,scale] duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] [transition-delay:800ms] motion-reduce:transition-none ${
+                      className={`h-5 w-7 text-[#A30B72] transition-[opacity,transform,scale] duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] [transition-delay:800ms] motion-reduce:transition-none sm:h-6 sm:w-8 ${
                         inView ? "scale-100 opacity-100" : "scale-50 opacity-0"
                       }`}
+                      viewBox="0 0 32 24"
+                      fill="currentColor"
                     >
-                      “
-                    </span>
+                      <path d="M7 3C3.7 3 1 5.7 1 9c0 4 2.5 7.5 6.5 9.5l1.5-2.2C6 14.8 5 12.8 5 11c.6.3 1.3.5 2 .5 2.2 0 4-1.8 4-4s-1.8-4-4-4zm15 0c-3.3 0-6 2.7-6 6 0 4 2.5 7.5 6.5 9.5l1.5-2.2c-3-1.5-4-3.5-4-5.3.6.3 1.3.5 2 .5 2.2 0 4-1.8 4-4s-1.8-4-4-4z" />
+                    </svg>
                     <span
                       aria-hidden="true"
                       className={`h-[1.5px] w-14 origin-left bg-[#B9A2D1] transition-transform duration-[1000ms] ease-[cubic-bezier(0.65,0,0.35,1)] [transition-delay:900ms] motion-reduce:transition-none sm:w-20 lg:w-24 ${
@@ -427,21 +429,17 @@ export default function Testimonials({ data }: TestimonialsProps) {
                     onClick={() => setCurrentIndex(index)}
                     aria-label={`${data.ariaLabels.goToTestimonial} ${index + 1}`}
                     aria-current={active ? "true" : undefined}
-                    className={`relative h-2.5 overflow-hidden rounded-full transition-[width,background-color] duration-500 ease-out ${
-                      active
-                        ? "w-9 bg-[#E6CFE3]"
-                        : "w-2.5 bg-[#D9C4E3] hover:bg-[#BA0D84]/50"
+                    className={`relative flex items-center justify-center transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#BA0D84] ${
+                      active ? "h-3.5 w-3.5" : "h-2.5 w-2.5"
                     }`}
                   >
-                    {active && (
-                      <span
-                        ref={(el) => {
-                          barRefs.current[index] = el;
-                        }}
-                        className="absolute inset-0 origin-left rounded-full bg-[#A30B72]"
-                        style={{ transform: `scaleX(${autoplay ? 0 : 1})` }}
-                      />
-                    )}
+                    <span
+                      className={`block rounded-full transition-all duration-300 ${
+                        active
+                          ? "h-3 w-3 bg-[#A30B72] shadow-sm"
+                          : "h-2.5 w-2.5 bg-[#D9C4E3] hover:bg-[#BA0D84]/60"
+                      }`}
+                    />
                   </button>
                 );
               })}

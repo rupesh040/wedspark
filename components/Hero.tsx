@@ -276,9 +276,9 @@ export function Hero({ data }: HeroProps) {
           }
         }
       }}
-      className="relative min-h-[540px] w-full overflow-hidden sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[740px]"
+      className="relative min-h-[540px] w-full overflow-hidden bg-[#290526] sm:min-h-[600px] md:min-h-[640px] lg:min-h-[700px] xl:min-h-[740px]"
     >
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 select-none">
         {data.slides.map((slide, index) => {
           const isActive = index === currentSlideIndex;
           return (
@@ -297,7 +297,7 @@ export function Hero({ data }: HeroProps) {
                 fill
                 priority={index === 0}
                 sizes="100vw"
-                className="object-cover object-center"
+                className="pointer-events-none select-none object-cover object-center"
               />
             </div>
           );
@@ -335,7 +335,7 @@ export function Hero({ data }: HeroProps) {
         <ArrowIcon direction="next" />
       </button>
 
-      <div className="relative z-30 mx-auto flex min-h-[540px] max-w-[1280px] items-center px-4 py-18 sm:min-h-[600px] sm:px-6 md:min-h-[640px] lg:min-h-[700px] lg:pl-24 lg:pr-8 min-[1440px]:pl-8 xl:min-h-[740px]">
+      <div className="relative z-30 mx-auto flex min-h-[500px] max-w-[1280px] items-center px-4 py-10 sm:min-h-[600px] sm:px-6 sm:py-14 md:min-h-[640px] lg:min-h-[700px] lg:pl-24 lg:pr-8 lg:py-18 min-[1440px]:pl-8 xl:min-h-[740px]">
         <div className="grid w-full grid-cols-[minmax(0,1fr)]">
           {data.slides.map((slide, index) => (
             <SlideContent

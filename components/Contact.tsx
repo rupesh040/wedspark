@@ -166,7 +166,7 @@ export default function Contact({ data }: ContactProps) {
     <section
       ref={ref}
       id="contact"
-      className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FFF9FB] via-[#FFFDFE] to-[#FFF5FA] overflow-hidden"
+      className="relative py-10 sm:py-14 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FFF9FB] via-[#FFFDFE] to-[#FFF5FA] overflow-hidden scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
     >
       <style>{`
         @keyframes cf-float {

@@ -63,10 +63,6 @@ function TopBar({ topBar }: { topBar: TopBarContactInfo }) {
             className="group inline-flex items-center gap-2.5 text-white/95 transition-colors duration-300 hover:text-[#F6D58E]"
           >
             <span className="relative inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center">
-              <span
-                aria-hidden="true"
-                className="ws-pin-ring pointer-events-none absolute inset-0 rounded-full border border-[#D89A33]"
-              />
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -146,9 +142,12 @@ function ContactButton({
       const targetId = href.replace("#", "");
       const target = document.getElementById(targetId);
       if (target) {
-        const headerOffset = 90;
+        const drawer = document.getElementById("mobile-navigation-drawer");
+        const drawerHeight = drawer ? drawer.offsetHeight : 0;
+        const isMobile = window.innerWidth < 1024;
+        const headerOffset = isMobile ? 70 : 90;
         const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition = elementPosition + window.pageYOffset - drawerHeight - headerOffset;
         window.scrollTo({
           top: Math.max(0, offsetPosition),
           behavior: "smooth",
@@ -233,9 +232,12 @@ export function Navbar({ data }: NavbarProps) {
         isManualScrolling.current = true;
         if (manualScrollTimeout.current) clearTimeout(manualScrollTimeout.current);
 
-        const headerOffset = 90;
+        const drawer = document.getElementById("mobile-navigation-drawer");
+        const drawerHeight = drawer && mobileMenuOpen ? drawer.offsetHeight : 0;
+        const isMobile = window.innerWidth < 1024;
+        const headerOffset = isMobile ? 70 : 90;
         const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition = elementPosition + window.pageYOffset - drawerHeight - headerOffset;
 
         window.scrollTo({
           top: Math.max(0, offsetPosition),
@@ -251,7 +253,7 @@ export function Navbar({ data }: NavbarProps) {
         }, 850);
       }
     }
-  }, []);
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {

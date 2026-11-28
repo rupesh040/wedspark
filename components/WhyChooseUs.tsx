@@ -25,7 +25,7 @@ export function WhyChooseUs({ data }: WhyChooseUsProps) {
         if (entry.isIntersecting) {
           setInView(true);
           observer.disconnect();
-        }
+        } 
       },
       { threshold: 0.25 }
     );
@@ -37,7 +37,7 @@ export function WhyChooseUs({ data }: WhyChooseUsProps) {
     <section
       ref={ref}
       id="why-choose-us"
-      className="overflow-hidden bg-white py-16"
+      className="overflow-hidden bg-white py-10 sm:py-14 lg:py-16 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">

@@ -233,7 +233,7 @@ export function Stats({ data }: StatsProps) {
   }
 
   return (
-    <section ref={ref} className="bg-white py-18">
+    <section ref={ref} className="bg-white py-10 sm:py-14 lg:py-18">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-y-0">
           {data.items.map((stat, index) => {
@@ -245,7 +245,7 @@ export function Stats({ data }: StatsProps) {
                 {!isLast && (
                   <span
                     aria-hidden="true"
-                    className={`absolute inset-y-1 right-0 hidden w-px origin-top bg-[#E4D9E2] transition-transform duration-[1100ms] ease-[cubic-bezier(0.65,0,0.35,1)] motion-reduce:transition-none lg:block ${
+                    className={`absolute inset-y-2.5 right-0 hidden w-px origin-top bg-[#E4D9E2] transition-transform duration-[1100ms] ease-[cubic-bezier(0.65,0,0.35,1)] motion-reduce:transition-none lg:block ${
                       inView ? "scale-y-100" : "scale-y-0"
                     }`}
                     style={{ transitionDelay: `${delay}ms` }}

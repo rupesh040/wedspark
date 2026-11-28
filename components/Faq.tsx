@@ -59,7 +59,7 @@ export default function Faq({ data }: FaqProps) {
     <section
       ref={ref}
       id="faqs"
-      className="relative overflow-hidden bg-[#FDF7FB] py-16"
+      className="relative overflow-hidden bg-[#FDF7FB] py-10 sm:py-14 lg:py-16 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="text-center">
@@ -86,7 +86,7 @@ export default function Faq({ data }: FaqProps) {
           </div>
 
           <h2
-            className={`${display.className} mt-3 flex flex-wrap justify-center gap-x-[0.26em] text-[34px] font-normal leading-[1.15] tracking-tight sm:text-[44px] lg:text-[54px]`}
+            className={`${display.className} mt-3 flex flex-nowrap items-baseline justify-center gap-x-[0.24em] text-[clamp(1.15rem,5.2vw,2.125rem)] font-normal leading-[1.15] tracking-tight whitespace-nowrap sm:text-[44px] lg:text-[54px]`}
           >
             {headingParts.map((part, i) => (
               <span key={i} className="block overflow-hidden pb-2">
@@ -103,7 +103,7 @@ export default function Faq({ data }: FaqProps) {
           </h2>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 sm:mt-14 sm:gap-3.5">
+        <div className="mt-6 flex flex-col gap-3 sm:mt-12 sm:gap-3.5">
           {data.items.map((item, index) => {
             const open = openId === item.id;
 

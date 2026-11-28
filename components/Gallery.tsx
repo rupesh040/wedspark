@@ -102,7 +102,7 @@ export function Gallery({ data }: GalleryProps) {
     <section
       ref={ref}
       id="gallery"
-      className="relative overflow-hidden bg-[#FDF7FB] py-16"
+      className="relative overflow-hidden bg-[#FDF7FB] py-10 sm:py-14 lg:py-16 scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
     >
       <Leaf inView={inView} className="-left-4 -top-4 w-28 sm:w-36 lg:w-40" />
       <Leaf inView={inView} className="-bottom-4 -right-4 w-28 rotate-180 sm:w-36 lg:w-40" />
