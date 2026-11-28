@@ -75,6 +75,8 @@ function SocialIcon({ platform }: { platform: string }) {
   return null;
 }
 
+const GRID_ROWS = 4;
+
 const HEART = "M12 21s-8-5.2-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 5.8-8 11-8 11z";
 
 export default function Footer({ data }: FooterProps) {
@@ -98,9 +100,16 @@ export default function Footer({ data }: FooterProps) {
   });
 
   const navCount = data.links.length;
+  const midIndex = Math.ceil(navCount / 2) - 1;
   const navEnd = 450 + navCount * 80;
   const socialStart = navEnd + 100;
   const dividerStart = socialStart + data.socialLinks.length * 90 + 100;
+
+  const dividerLine = (delay: number) => ({
+    transform: inView ? "scaleY(1)" : "scaleY(0)",
+    transitionDelay: `${delay}ms`,
+    transitionTimingFunction: EASE,
+  });
 
   return (
     <footer
@@ -164,61 +173,84 @@ export default function Footer({ data }: FooterProps) {
         </div>
 
         <nav aria-label="Footer Navigation" className="mt-5 mb-5 sm:mt-8 sm:mb-7">
-          <ul className="grid grid-cols-2 grid-rows-4 grid-flow-col gap-x-6 gap-y-2.5 max-w-[280px] xs:max-w-[320px] mx-auto text-center sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-3.5 md:gap-x-5 sm:gap-y-2.5 sm:max-w-none text-xs sm:text-sm font-bold tracking-wider text-[#1F1A1C]">
-            {data.links.map((link, index) => (
-              <li key={link.name} className="flex items-center justify-center sm:gap-x-3.5 md:gap-x-5">
-                <span
-                  className={`inline-block transition-all duration-[900ms] ${
-                    inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          <div className="relative w-full max-w-[300px] xs:max-w-[340px] mx-auto sm:max-w-none">
+            {navCount > 1 && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute left-1/2 top-1 bottom-1 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#CB995A] to-transparent origin-center transition-transform duration-[1400ms] sm:hidden"
+                style={dividerLine(450 + (midIndex + 1) * 80)}
+              />
+            )}
+            <ul className="grid grid-cols-2 grid-rows-4 grid-flow-col gap-x-10 gap-y-2.5 text-center sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-3.5 md:gap-x-5 sm:gap-y-2.5 text-xs sm:text-sm font-bold tracking-wider text-[#1F1A1C]">
+              {data.links.map((link, index) => (
+                <li
+                  key={link.name}
+                  className={`flex items-center justify-start text-left sm:justify-center sm:text-center sm:pl-0 sm:gap-x-3.5 md:gap-x-5 ${
+                    index >= GRID_ROWS ? "pl-3" : ""
                   }`}
-                  style={{
-                    transitionDelay: `${450 + index * 80}ms`,
-                    transitionTimingFunction: EASE,
-                  }}
                 >
-                  <Link
-                    href={link.href}
-                    onClick={(e) => {
-                      if (link.href === "/" || link.href === "#home") {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                        try {
-                          history.pushState(null, "", link.href);
-                        } catch {}
-                        return;
-                      }
-                      if (link.href.startsWith("#")) {
-                        e.preventDefault();
-                        const targetId = link.href.replace("#", "");
-                        const target = document.getElementById(targetId);
-                        if (target) {
-                          const isMobile = window.innerWidth < 1024;
-                          const headerOffset = isMobile ? 70 : 90;
-                          const pos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-                          window.scrollTo({ top: Math.max(0, pos), behavior: "smooth" });
+                  <span
+                    className={`inline-block transition-all duration-[900ms] ${
+                      inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    }`}
+                    style={{
+                      transitionDelay: `${450 + index * 80}ms`,
+                      transitionTimingFunction: EASE,
+                    }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={(e) => {
+                        if (link.href === "/" || link.href === "#home") {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: "smooth" });
                           try {
                             history.pushState(null, "", link.href);
                           } catch {}
+                          return;
                         }
-                      }
-                    }}
-                    className="group relative inline-block py-1 hover:text-[#84137C] transition-colors duration-300"
-                  >
-                    {link.name}
-                    <span className="absolute left-0 -bottom-0.5 h-[1.5px] w-full bg-[#CB995A] origin-center scale-x-0 transition-transform duration-500 group-hover:scale-x-100" />
-                  </Link>
-                </span>
-                {index < navCount - 1 && (
-                  <span
-                    className={`hidden sm:inline text-[#CB995A] text-xs select-none ${pop(520 + index * 80).className}`}
-                    style={pop(520 + index * 80).style}
-                  >
-                    •
+                        if (link.href.startsWith("#")) {
+                          e.preventDefault();
+                          const targetId = link.href.replace("#", "");
+                          const target = document.getElementById(targetId);
+                          if (target) {
+                            const isMobile = window.innerWidth < 1024;
+                            const headerOffset = isMobile ? 70 : 90;
+                            const pos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                            window.scrollTo({ top: Math.max(0, pos), behavior: "smooth" });
+                            try {
+                              history.pushState(null, "", link.href);
+                            } catch {}
+                          }
+                        }
+                      }}
+                      className="group relative inline-block py-1 hover:text-[#84137C] transition-colors duration-300"
+                    >
+                      {link.name}
+                      <span
+                        className="absolute left-0 -bottom-0.5 h-[1.5px] w-full bg-[#CB995A] origin-left sm:origin-center scale-x-0 transition-transform duration-500 group-hover:scale-x-100"
+                      />
+                    </Link>
                   </span>
-                )}
-              </li>
-            ))}
-          </ul>
+                  {index < navCount - 1 &&
+                    (index === midIndex ? (
+                      <span
+                        aria-hidden="true"
+                        className="hidden sm:inline-block w-px h-6 shrink-0 bg-gradient-to-b from-transparent via-[#CB995A] to-transparent origin-center transition-transform duration-[1400ms] select-none"
+                        style={dividerLine(520 + index * 80)}
+                      />
+                    ) : (
+                      <span
+                        className={`hidden sm:inline text-[#CB995A] text-xs select-none ${pop(520 + index * 80).className}`}
+                        style={pop(520 + index * 80).style}
+                      >
+                        •
+                      </span>
+                    ))}
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
 
         <div className="flex items-center justify-center gap-3.5 sm:gap-4 my-4 sm:my-6">
